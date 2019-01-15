@@ -1,18 +1,18 @@
 {
-  "name": "connect-php",
-  "version": "0.0.2",
-  "main": "lib/connect-php.js",
+  "name": "connect-php-cgi",
+  "version": "0.1.0",
+  "main": "lib/connect-php-cgi.js",
   "description": "PHP middleware for https://github.com/senchalabs/connect",
-  "homepage": "https://github.com/ddprrt/connect-php",
-  "bugs": "https://github.com/ddprrt/connect-php/issues",
+  "homepage": "https://github.com/lightscaletech/connect-php-cgi",
+  "bugs": "https://github.com/lightscaletech/connect-php/issues",
   "author": {
-    "name": "Stefan Baumgartner",
-    "email": "sbaumg@gmail.com",
-    "url": "http://www.fettblog.eu"
+    "name": "Sam Light",
+    "email": "info@lightscale.co.uk",
+    "url": "https://lightscale.co.uk"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ddprrt/connect-php"
+    "url": "https://github.com/lightscaletech/connect-php-cgi"
   },
   "keywords": ["connect","php","middleware"],
   "licenses": [
