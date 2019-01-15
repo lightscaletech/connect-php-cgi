@@ -16,8 +16,35 @@ This plugin is a very early stage, and was primarily designed to provide a bette
 
 Its main goal is to parse and execute `.php` files whenever a request to such a file is made.
 
+Do not use this in production. Its good for local development. Use a traditional
+PHP webserver setup for production ever Apache mod_php or another server like
+nginx with fastcgi.
+
 ## Getting Started
-Install the module with: `npm install connect-php`
+I haven't added this to the npm repo yet so to install you have to go direct
+from git.
+
+Install the module with: `npm install git+https://github.com/lightscaletech/connect-php-cgi.git`
+
+## Using it with [Gulp](https://gulpjs.com/)
+
+To use this with Gulp get the `gulp-serve` package. You can then setup middleware
+for this.
+
+Try something like this:
+
+``` javascript
+const target = './dist'
+
+const server = serve({
+    root: target,
+    middleware: connectphp(target)
+});
+
+exports.serve = server;
+
+```
+
 
 ## Using it with [Grunt](http://gruntjs.com/)
 
@@ -32,7 +59,7 @@ module.exports = function (grunt) {
     require('load-grunt-tasks')(grunt);
 
     //Add this to the beginning of your Gruntfile.js
-    var phpMiddleware = require('connect-php');
+    var phpMiddleware = require('connect-php-cgi');
 
     grunt.initConfig({
         ...
