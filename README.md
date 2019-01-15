@@ -34,7 +34,9 @@ for this.
 Try something like this:
 
 ``` javascript
-const target = './dist'
+const gulp-serve = require('gulp-serve'),
+      connectphp = require('connect-php-cgi'),
+      target = './dist';
 
 const server = serve({
     root: target,
