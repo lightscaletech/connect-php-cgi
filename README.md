@@ -1,6 +1,14 @@
-# connect-php [![Build Status](https://secure.travis-ci.org/ddprrt/connect-php.png?branch=master)](http://travis-ci.org/ddprrt/connect-php)
+# connect-php-cgi
 
 PHP middleware for https://github.com/senchalabs/connect
+
+This is a heavily modified fork of https://github.com/ddprrt/connect-php.
+The aim of the fork is to get the middleware passing post and get data to php
+correctly. I also wanted it to handle headers from PHP.
+
+The way it was originally build just run a script with the php cli command.
+This just runs a script and dumps the output to stdout. I've switched it to use
+php-cgi makes it work more like apache modphp or fastcgi.
 
 ## Disclaimer
 
@@ -35,7 +43,7 @@ module.exports = function (grunt) {
                 hostname: 'localhost',
                 middleware: function(connect, options) {
                     // The directory where connect is executed
-                    var directory = options.directory 
+                    var directory = options.directory
                       || options.base[options.base.length - 1];
                     // Return an array of all middlewares
                     return [
@@ -59,7 +67,7 @@ middleware: function(connect, options) {
     if (!Array.isArray(options.base)) {
         options.base = [options.base];
     }
-    
+
     // Magic happens here
     middlewares.push(phpMiddleware(directory));
 
